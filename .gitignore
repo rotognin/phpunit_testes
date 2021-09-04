@@ -2,3 +2,4 @@ vendor/
 composer.*
 .vscode/
 .phpunit.result.cache
+notas.txt
