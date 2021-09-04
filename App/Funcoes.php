@@ -51,4 +51,39 @@ class Funcoes
 
         return true;
     }
+
+    /**
+     * Calcular a quantidade de horas e minutos dentro de um mesmo dia
+     * Existem funções que fazem isso automaticamente, mas só estou fazendo
+     * de forma manual para esse projeto de testes unitários.
+     */
+    public function quantoTempo(float $horaInicio, float $horaFim)
+    {
+        $tempo = 0.00;
+
+        if ($horaInicio >= $horaFim){
+            return $tempo;
+        }
+
+        $hrI = floor($horaInicio);
+        $mnI = $horaInicio = $hrI;
+
+        if ($hrI > 23 || $mnI > 59) {
+            return $tempo;
+        }
+
+        $hrF = floor($horaFim);
+        $mnF = $horaFim = $hrF;
+
+        if ($hrF > 23 || $mnF > 59) {
+            return $tempo;
+        }
+
+        $hrImn = $hrI * 60; // Transforma as horas em minutos
+        $hrFmn = $hrF * 60;
+
+        // Faltando implementar o resto da função....
+
+        return $tempo;
+    }
 }

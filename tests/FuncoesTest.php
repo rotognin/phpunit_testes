@@ -55,4 +55,27 @@ class FuncoesTest extends TestCase
             array('01/13/2020', false)  // Não existe mês 13
         );
     }
+
+    /**
+     * @dataProvider dpTestQuantoTempo
+     */
+    public function testQuantoTempo(float $horaInicio, float $horaFim, float $esperado)
+    {
+        /*
+        $obj = new Funcoes();
+        $this->assertEquals($esperado, $obj->quantoTempo($horaInicio, $horaFim), 'Cálculo incorreto de soma de Horas');
+        */
+
+        $this->markTestIncomplete('Ainda falta terminar a implementação da função "quantoTempo".');
+    }
+
+    /**
+     * Provedor para o teste de cálculo do tempo entre um horário e outro
+     */
+    public function dpTestQuantoTempo()
+    {
+        return array(
+            array(8.00, 10.00, 2.00)
+        );
+    }
 }
