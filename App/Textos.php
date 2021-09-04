@@ -18,4 +18,19 @@ class Textos
 
         return $invertido;
     }
+
+    public function contarLetra(string $letra, string $texto)
+    {
+        $iCnt = 0;
+        $iQtd = 0;
+
+        for ($iCnt = 0; $iCnt < strlen($texto); $iCnt++)
+        {
+            if ($texto[$iCnt] == $letra){
+                $iQtd++;
+            }
+        }
+
+        return $iQtd;
+    }
 }
