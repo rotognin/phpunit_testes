@@ -4,7 +4,6 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 use App\Funcoes;
-use App\Textos;
 
 class FuncoesTest extends TestCase
 {
@@ -36,30 +35,6 @@ class FuncoesTest extends TestCase
         );
     }
 
-    public function testInverter()
-    {
-        $texto = new Textos();
-        $this->assertEquals('ogirdoR', $texto->inverter('Rodrigo'), 'Não inverteu a string!');
-        $this->assertEquals('55 88 5  2 1  1', $texto->inverter('1  1 2  5 88 55'), 'Não inverteu a string');
-    }
-
-    /**
-     * @dataProvider dpTestContarLetra
-     */
-    public function testContarLetra(string $texto, string $letra, int $esperado)
-    {
-        $obj = new Textos();
-        $this->assertEquals($esperado, $obj->contarLetra($letra, $texto), 'Errou na contagem das letras');
-    }
-
-    public function dpTestContarLetra()
-    {
-        return array(
-            array('Rodrigo Tognin', 'o', 3),
-            array('1 2 3 4 5 6 7 8 9 0 ', ' ', 10)
-        );
-    }
-
     /**
      * @dataProvider dpTestValidarData
      */
@@ -72,8 +47,12 @@ class FuncoesTest extends TestCase
     public function dpTestValidarData()
     {
         return array(
-            array('10/05/2021', true),
-            array('32/05/2021', false)
+            array('04/09/2021', true),  // OK
+            array('32/05/2021', false), // Dia inválido
+            array('1234567890', false), // Valor inválido
+            array('aa/aa/aaaa', false), // Valor inválido
+            array('29/02/2021', false), // Não tem 29 em Fevereiro de 2021
+            array('01/13/2020', false)  // Não existe mês 13
         );
     }
 }

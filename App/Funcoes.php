@@ -17,6 +17,9 @@ class Funcoes
     public function validarData(string $data)
     {
         $aData = explode('/', $data);
+
+        if (count($aData) != 3){ return false; }
+
         $dia = (int)$aData[0];
         $mes = (int)$aData[1];
         $ano = (int)$aData[2];
