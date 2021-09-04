@@ -1,0 +1,4 @@
+vendor/
+composer.*
+.vscode/
+.phpunit.result.cache
